@@ -18,10 +18,18 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".", // 기본 경로를 프로젝트 최상단으로 설정
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"] // ./.contentlayer/generated는 contentlayer/generated로 인식하겠다는 경로 설정
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".contentlayer/generated" // 컴파일 할 파일 경로
+  ],
   "exclude": ["node_modules"]
 }

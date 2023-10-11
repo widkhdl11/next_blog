@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "YEONGJUPunggiGinsengTTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/YEONGJUPunggiGinsengTTF.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .md-container {
+    @apply max-w-screen-md mx-auto bg-white;
+  }
+
+  .btn-purple {
+    @apply font-semibold px-4 py-2 rounded-full bg-d-purple text-white hover:opacity-70;
+  }
+  .btn-purple-reverse {
+    @apply font-semibold px-4 py-2 rounded-full text-d-purple border-2 border-d-purple hover:opacity-70;
+  }
+  .btn-green {
+    @apply font-semibold px-4 py-2 rounded-full bg-d-green text-white hover:opacity-70;
+  }
+  .btn-green-reverse {
+    @apply font-semibold px-4 py-2 rounded-full text-d-green border-2 border-d-green hover:opacity-70;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background: #be93c5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #7bc6cc,
+    #be93c5
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to right,
+    #7bc6cc,
+    #be93c5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
