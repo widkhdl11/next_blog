@@ -31,8 +31,7 @@ export const generateMetadata = ({ params }: PostLayoutProps) => {
       ],
     },
     twitter: {
-      type: "summary_large_image",
-      url: post.url,
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
       images: [
