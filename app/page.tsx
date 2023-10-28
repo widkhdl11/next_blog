@@ -47,7 +47,7 @@ const Home: NextPage = () => {
           My Profile
         </Link>
       </div>
-      <ul className="pb-12">
+      <ul className="pb-12 ">
         {posts.map((v, i) => {
           return <PostCard key={i} post={v} index={i} />;
         })}

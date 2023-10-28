@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header: FC = () => {
   return (
-    <header className="md-container px-2 py-4 shadow-lg">
+    <header className="md-container px-2 py-4 shadow-lg bg-gray-100">
       <h1 className="font-yjpg md:text-2xl text-lg text-d-navy hover:text-gray-700">
         <Link href="/">Jaewon &apos;s Blog</Link>
       </h1>
