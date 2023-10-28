@@ -4,7 +4,7 @@ import Image from "next/image";
 const Profile: NextPage = () => {
   return (
     <div className="flex flex-col px-10 py-14 font-yjpg bg-gray-100">
-      <h2 className="self-center text-[40px] mx-6 my-9">재원's 프로필</h2>
+      <h2 className="self-center text-[40px] mx-6 my-9">재원&apos;s 프로필</h2>
       <div className="flex flex-col justify-center border-4 border-double rounded-2xl border-gray-500  h-1/2 mx-[40px]">
         <div className="flex">
           <div className="w-1/2 flex justify-center h-[180px] mt-[50px]">
