@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     url: "https://next-blog-tau-six.vercel.app",
     title: "Jaewon's blog",
     description: "재원이의 블로그",
-    images: ["/images/owl.png"],
+    images: ["/images/dog.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jaewon's blog",
     description: "재원이의 블로그",
-    images: ["/images/owl.png"],
+    images: ["/images/dog.png"],
   },
 };
 

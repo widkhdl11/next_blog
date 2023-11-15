@@ -32,8 +32,8 @@ const Home: NextPage = () => {
         <div className="w-24 h-24 md:w-48 md:h-48 relative">
           <Image
             className="absolute rounded-2xl"
-            src="/images/owl.png"
-            alt="owl"
+            src="/images/dog.png"
+            alt="dog"
             fill
           />
         </div>

@@ -27,7 +27,7 @@ export const generateMetadata = ({ params }: PostLayoutProps) => {
       title: post.title,
       description: post.description,
       images: [
-        post.thumbnail ? `/images/${post.thumbnail}` : "/images/owl.png",
+        post.thumbnail ? `/images/${post.thumbnail}` : "/images/dog.png",
       ],
     },
     twitter: {
@@ -35,7 +35,7 @@ export const generateMetadata = ({ params }: PostLayoutProps) => {
       title: post.title,
       description: post.description,
       images: [
-        post.thumbnail ? `/images/${post.thumbnail}` : "/images/owl.png",
+        post.thumbnail ? `/images/${post.thumbnail}` : "/images/dog.png",
       ],
     },
   };

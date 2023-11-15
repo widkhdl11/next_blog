@@ -24,7 +24,7 @@ const PostCard: FC<PostCardProps> = ({ post, index }) => {
           <Image
             className="absolute rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
             src={`${
-              post.thumbnail ? "/images/" + post.thumbnail : "/images/owl.png"
+              post.thumbnail ? "/images/" + post.thumbnail : "/images/dog.png"
             }`}
             alt={post.title}
             fill
