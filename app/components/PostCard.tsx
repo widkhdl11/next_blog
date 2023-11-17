@@ -12,7 +12,7 @@ interface PostCardProps {
 const PostCard: FC<PostCardProps> = ({ post, index }) => {
   return (
     <li
-      className={`mx-4 mt-8 md:mt-12 shadow-md rounded-xl hover:opacity-70 ${
+      className={`mx-8 mt-8 md:mt-12 shadow-md rounded-xl hover:opacity-70 ${
         index % 2 ? "shadow-d-purple" : "shadow-d-green"
       }`}
     >
@@ -31,7 +31,7 @@ const PostCard: FC<PostCardProps> = ({ post, index }) => {
             objectFit="cover"
           />
         </div>
-        <div className="p-4 md:pb-0 md:w-[544px]">
+        <div className="py-4 pr-16 md:pb-0 md:w-[544px]">
           <h2 className="truncate mb-4 text-xl md:text-2xl font-semibold">
             {post.title}
           </h2>

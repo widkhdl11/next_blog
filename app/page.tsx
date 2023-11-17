@@ -28,24 +28,33 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="bg-gray-300 h-60 md:h-96 flex flex-col justify-center items-center">
-        <div className="w-24 h-24 md:w-48 md:h-48 relative">
-          <Image
-            className="absolute rounded-2xl"
-            src="/images/dog.png"
-            alt="dog"
-            fill
-          />
+      <div className=" relative bg-gray-300 h-60 md:h-96">
+        <div className="absolute z-10 flex flex-col justify-center items-center w-full h-full">
+          <div className="w-24 h-24 md:w-48 md:h-48 relative">
+            <Image
+              className="absolute rounded-2xl"
+              src="/images/dog.png"
+              alt="dog"
+              fill
+            />
+          </div>
+          <h2 className="mt-3 md:mt-6 font-semibold text-xs md:text-xl">
+            {quote}
+          </h2>
+          <Link
+            className="mt-3 md:mt-6 font-semibold px-4 py-2 rounded-full bg-white bg-opacity-10 border-2 border-black text-black hover:bg-opacity-30 text-xl md:text-xl"
+            href="/profile"
+          >
+            My Profile
+          </Link>
         </div>
-        <h2 className="mt-3 md:mt-6 font-semibold text-xs md:text-xl">
-          {quote}
-        </h2>
-        <Link
-          className="mt-3 md:mt-6 btn-green text-xl md:text-xl"
-          href="/profile"
-        >
-          My Profile
-        </Link>
+        <video
+          className="absolute w-full h-full object-cover top-0 left-0 "
+          src="/images/video.mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
       </div>
       <ul className="pb-12 ">
         {posts.map((v, i) => {
