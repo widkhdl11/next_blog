@@ -51,15 +51,14 @@ const Profile: NextPage = () => {
         <div className="py-1 px-4 text-d-green  font-semibold text-2xl mb-8 mt-2 mx-12 text-right bg-gray-200">
           입니다.
         </div>
-
-        <div className="flex justify-center">
-          <Image
-            src="/images/profile.jpg"
-            alt="profile"
-            width={140 * size > 140 ? 140 * size : 140}
-            height={180 * size > 180 ? 180 * size : 180}
-          ></Image>
-        </div>
+      </div>
+      <div className="flex justify-center">
+        <Image
+          src="/images/profile.jpg"
+          alt="profile"
+          width={140 * size > 140 ? 140 * size : 140}
+          height={180 * size > 180 ? 180 * size : 180}
+        ></Image>
       </div>
       <div className="flex flex-col justify-center border-4 border-double rounded-2xl border-gray-500  h-1/2 mx-[40px]">
         <div className="flex">
