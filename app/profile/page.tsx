@@ -1,10 +1,66 @@
+"use client";
+
 import { NextPage } from "next";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const Profile: NextPage = () => {
+  const [size, setSize] = useState<number>(6);
+
+  const scrollEvent = () => {
+    setSize(6 - window.scrollY * 0.05);
+  };
+
+  // 스크롤 내릴 때 왜 자꾸 유즈 이펙트가 실행이 됐는지
+  // 유즈 이펙트 없이 리무브까지 구현했을시 똑같은지
+
+  useEffect(() => {
+    const watchScroll = () => window.addEventListener("scroll", scrollEvent);
+
+    watchScroll();
+
+    return () => window.removeEventListener("scroll", scrollEvent);
+  }, []);
+
   return (
-    <div className="flex flex-col px-10 py-14 font-yjpg bg-gray-100">
-      <h2 className="self-center text-[40px] mx-6 my-9">재원&apos;s 프로필</h2>
+    <div className=" flex flex-col py-14 bg-gray-100">
+      <div className="px-10">
+        <div className="py-1 px-4 text-d-purple font-semibold text-2xl mb-1 mx-12 bg-gray-200">
+          안녕하세요. 저는
+        </div>
+        <div className="py-1 text-center font-semibold text-2xl bg-gray-200">
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              "혁신적인 솔루션을 창출하는 열정 넘치는 개발자",
+              1000, // wait 1s before replacing "Mice" with "Hamsters"
+              "팀원과의 원활한 협업으로 가치를 더하는 열심히 일하는 전문가",
+              1000,
+              "불굴의 의지로 문제를 해결하는 높은 책임감의 개발자",
+              1000,
+              "빠르게 변화하는 기술에 뒤처지지 않는 최신 트렌드 적용 전문가",
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            //style={{ fontSize: "2em", display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </div>
+        <div className="py-1 px-4 text-d-green  font-semibold text-2xl mb-8 mt-2 mx-12 text-right bg-gray-200">
+          입니다.
+        </div>
+
+        <div className="flex justify-center">
+          <Image
+            src="/images/profile.jpg"
+            alt="profile"
+            width={140 * size > 140 ? 140 * size : 140}
+            height={180 * size > 180 ? 180 * size : 180}
+          ></Image>
+        </div>
+      </div>
       <div className="flex flex-col justify-center border-4 border-double rounded-2xl border-gray-500  h-1/2 mx-[40px]">
         <div className="flex">
           <div className="w-1/2 flex justify-center h-[180px] mt-[50px]">
@@ -77,60 +133,6 @@ const Profile: NextPage = () => {
       </div>
 
       <div className="mt-5 px-9">
-        <h2 className="text-[30px]">Project.</h2>
-        <ul>
-          <li>
-            <div className="my-5 flex flex-col">
-              <div className="text-[24px]">1. 기능 중점의 블로그</div>
-              <div>
-                <h3 className="text-[20px]">개요</h3>
-                <p>
-                  국비 교육을 통해 팀원들과 팀프로젝트는 해보았지만 한번쯤은
-                  혼자 만들어보며 다양한 부분에서 고민해 보고 싶다는 생각을
-                  가지고 있었습니다. <br />
-                  그러하여 실용적인 측면보다는 기능의 구현과 경험에 중점을 두어
-                  대중적으로 사용하는 다양한 프레임워크들을 사용해보기 위한
-                  블로그를 제작하게 되었습니다.
-                  <br /> 아직은 미완성이지만 차차 업데이트를 해나갈 생각입니다.
-                </p>
-                <div className="text-[20px]">주요기술</div>
-                <div>
-                  <span>
-                    Java, Spring Boot, JPA, React, Spring Security,H2, Redis
-                  </span>
-                </div>
-              </div>
-              <div className="flex justify-end pt-3">
-                <h3 className="font-semibold mr-3">git -</h3>
-                <span>https://github.com/widkhdl11/polog01</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="my-5 flex flex-col">
-              <div className="text-[24px]">2. 기본 중점 블로그</div>
-              <div>
-                <h3 className="text-[20px]">개요</h3>
-                <p>
-                  처음 계획한 블로그를 제작 중 생각보다 많은 시간이 투자하게
-                  되어 현실적인 부분을 생각하여, 기본적인 기능에 중점을 둔
-                  블로그를 먼저 만들게 되었습니다.
-                </p>
-                <div className="text-[20px]">주요기술</div>
-                <div>
-                  <span>React, TailWind, Redux, NextJS</span>
-                </div>
-              </div>
-              <div className="flex justify-end pt-3">
-                <h3 className="font-semibold mr-3">git -</h3>
-                <span>https://github.com/widkhdl11/next_blog</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div className="mt-5 px-9">
-        <h2 className="text-[30px]">etc.</h2>
         <span>https://jjaewonn.tistory.com</span>
       </div>
     </div>

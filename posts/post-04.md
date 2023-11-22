@@ -1,5 +1,6 @@
 ---
 title: CSS와 SCSS 기초
+thumbnail: css.png
 date: 2023-09-30
 description: CSS과 SCSS의 기본 문법을 알아본다.
 ---
