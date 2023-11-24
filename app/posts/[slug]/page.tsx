@@ -70,11 +70,11 @@ const PostLayout: NextPage<PostLayoutProps> = ({ params }) => {
             </time>
           </div>
         </div>
+        <div
+          className="mt-8 text-lg break-words [&>ol>li]:mt-4 [&>ol>li>p>strong]:text-2xl [&>h3]:mt-8 [&>h3]:text-3xl [&>h3]:font-semibold [&>h3:last-child]:pb-12"
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+        />
       </div>
-      <div
-        className="mt-8 text-lg break-words [&>ol>li]:mt-4 [&>ol>li>p>strong]:text-2xl [&>h3]:mt-8 [&>h3]:text-3xl [&>h3]:font-semibold [&>h3:last-child]:pb-12"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
     </article>
   );
 };
