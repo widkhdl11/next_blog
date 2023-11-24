@@ -47,7 +47,7 @@ const PostLayout: NextPage<PostLayoutProps> = ({ params }) => {
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
   return (
-    <article className="min-h-screen mx-2">
+    <article className="min-h-screen">
       {post.thumbnail && (
         <div className="relative h-60 md:h-96">
           <Image
@@ -59,14 +59,16 @@ const PostLayout: NextPage<PostLayoutProps> = ({ params }) => {
           />
         </div>
       )}
-      <div>
-        <h1 className="text-center pt-8 mb-4 md:mb-8 text-xl  md:text-4xl font-semibold">
-          {post.title}
-        </h1>
-        <div className="text-right text-gray-500 md:text-xl mx-2">
-          <time datatype={post.date}>
-            {format(parseISO(post.date), "LLLL d, yyyy")}
-          </time>
+      <div className="px-8">
+        <div>
+          <h1 className="text-center pt-8 mb-4 md:mb-8 text-xl  md:text-4xl font-semibold">
+            {post.title}
+          </h1>
+          <div className="text-right text-gray-500 md:text-xl mx-2">
+            <time datatype={post.date}>
+              {format(parseISO(post.date), "yyyy년 MM월 dd일")}
+            </time>
+          </div>
         </div>
       </div>
       <div

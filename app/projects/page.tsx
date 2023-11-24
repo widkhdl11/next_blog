@@ -32,12 +32,12 @@ const Projects: NextPage = () => {
   };
   return (
     <div className="flex flex-col  bg-gray-100">
-      <ul className="bg-blue-100 w-full">
+      <ul className=" w-full">
         <Slider ref={sliderRef} {...settings}>
           {projectData.map((v, i) => (
-            <li key={i} className="bg-red-100 w-full relative h-[400px]">
+            <li key={i} className=" w-full relative h-[400px]">
               <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                <span className="font-bold text-5xl text-white py-2 px-4 bg-black bg-opacity-70">
+                <span className="font-bold md:text-5xl text-2xl text-white py-2 px-4 bg-black bg-opacity-70">
                   {v.name}
                 </span>
               </div>

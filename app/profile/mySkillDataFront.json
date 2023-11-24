@@ -1,0 +1,6 @@
+[
+  { "name": "ReactJS", "skill": 3 },
+  { "name": "JavaScript", "skill": 3 },
+  { "name": "TypeScript", "skill": 2 },
+  { "name": "CSS", "skill": 2 }
+]

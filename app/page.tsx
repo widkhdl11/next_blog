@@ -8,11 +8,16 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const quotes = [
-  "The Future depends on what you do today 1",
-  "The Future depends on what you do today 2",
-  "The Future depends on what you do today 3",
-  "The Future depends on what you do today 4",
-  "The Future depends on what you do today 5",
+  "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+  "A good programmer is someone who always looks both ways before crossing a one-way street.",
+  "The best code is no code at all.",
+  "Good code is its own best documentation.",
+  "Every software has at least one bug, and every program has at least one user.",
+  "Code is like humor. When you have to explain it, it’s bad.",
+  "If you don't think carefully, you might think that coding is just typing.",
+  "The next best thing to having good ideas is recognizing good ideas from your users. Sometimes the latter is better.",
+  "The computer was born to solve problems that did not exist before.",
+  "First, solve the problem. Then, write the code.",
 ];
 
 const Home: NextPage = () => {
@@ -38,7 +43,7 @@ const Home: NextPage = () => {
               fill
             />
           </div>
-          <h2 className="mt-3 md:mt-6 font-semibold text-xs md:text-xl">
+          <h2 className="mt-3 md:mt-6 font-semibold text-xs md:text-xl mx-3 md:mx-6 px-8 text-center">
             {quote}
           </h2>
           <Link

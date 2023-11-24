@@ -4,12 +4,19 @@ import { NextPage } from "next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import MySkillCard from "../components/MySkillCard";
+import mySkillDataFront from "./mySkillDataFront.json";
+import mySkillDataBack from "./mySkillDataBack.json";
+import Link from "next/link";
+
+const profileWidth = 280;
+const profileHeight = 360;
 
 const Profile: NextPage = () => {
   const [size, setSize] = useState<number>(6);
 
   const scrollEvent = () => {
-    setSize(6 - window.scrollY * 0.05);
+    setSize(6 - window.scrollY * 0.025);
   };
 
   // 스크롤 내릴 때 왜 자꾸 유즈 이펙트가 실행이 됐는지
@@ -24,12 +31,12 @@ const Profile: NextPage = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col py-14 bg-gray-100">
-      <div className="px-10">
-        <div className="py-1 px-4 text-d-purple font-semibold text-2xl mb-1 mx-12 bg-gray-200">
+    <div className=" flex flex-col py-14 bg-gray-100 text-gray-700">
+      <div className="px-10 text-lg md:text-2xl">
+        <div className="py-1 px-4 text-d-purple font-semibold mb-2 md:mx-12 mx-8 bg-gray-200">
           안녕하세요. 저는
         </div>
-        <div className="py-1 text-center font-semibold text-2xl bg-gray-200">
+        <div className="py-1 text-center font-semibold bg-gray-200">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -48,91 +55,92 @@ const Profile: NextPage = () => {
             repeat={Infinity}
           />
         </div>
-        <div className="py-1 px-4 text-d-green  font-semibold text-2xl mb-8 mt-2 mx-12 text-right bg-gray-200">
+        <div className="py-1 px-4 text-d-green font-semibold mb-8 mt-2 text-right bg-gray-200 md:mx-12 mx-8">
           입니다.
         </div>
       </div>
-      <div className="flex justify-center">
+
+      <div className="flex flex-col justify-center items-center mt-8">
+        {size > 1 && (
+          <div
+            style={{
+              width:
+                profileWidth * size > profileWidth
+                  ? profileWidth * size
+                  : profileWidth,
+            }}
+            className="max-w-screen-md h-4 bg-gradient-to-r from-d-green to-d-purple "
+          ></div>
+        )}
         <Image
+          className={size <= 1 ? "rounded-3xl" : ""}
           src="/images/profile02.jpg"
           alt="profile"
-          width={140 * size > 140 ? 140 * size : 140}
-          height={180 * size > 180 ? 180 * size : 180}
+          width={
+            profileWidth * size > profileWidth
+              ? profileWidth * size
+              : profileWidth
+          }
+          height={
+            profileHeight * size > profileHeight
+              ? profileHeight * size
+              : profileHeight
+          }
         ></Image>
       </div>
-      <div className="flex flex-col justify-center border-4 border-double rounded-2xl border-gray-500  h-1/2 mx-[40px]">
-        <div className="flex">
-          <div className="w-1/2 flex justify-center h-[180px] mt-[50px]">
-            <Image
-              src="/images/profile.jpg"
-              alt="profile"
-              width={140}
-              height={180}
-            ></Image>
-          </div>
-          <div className="w-1/2 flex justify-star1 items-start pt-9 h-[180px] mt-[50px]">
-            <ul>
-              <li>
-                <span>생년월일 : </span>
-                <span>940417</span>
-              </li>
-              <li>
-                <span>이름 : </span>
-                <span>정재원</span>
-              </li>
-              <li>
-                <span>경력 : </span>
-                <span>국비교육(ICT인재 개발원), 웹비즈(백엔드)</span>
-              </li>
-            </ul>
-          </div>
+      <div className="flex flex-col items-center mt-8">
+        <h1 className="font-semibold text-2xl">About Me.</h1>
+        <h3 className="mt-4 text-xl font-medium md:text-4xl">
+          안녕하세요! 웹 개발자{" "}
+          <span className="font-bold text-black">정재원</span>
+          입니다.
+        </h3>
+        <p className="mt-4 px-8">
+          국비 교육(ICT인재 개발원)에서 웹 개발에 대한 풍부한 지식을 쌓았습니다.
+          웹비즈(백엔드)에서의 경험을 토대로 백엔드에 대한 깊은 이해를
+          갖추었지만, 더 나아가{" "}
+          <span className="font-bold text-black">프론트엔드</span>,{" "}
+          <span className="font-bold text-black">빅데이터</span>,{" "}
+          <span className="font-bold text-black">자동화 시스템</span>, 그리고{" "}
+          <span className="font-bold text-black">머신러닝</span> 분야에 끊임없는
+          탐구와 관심을 가지고 있습니다.
+        </p>
+        <p className="mt-4 px-8">
+          성실함과 집요함은 제 강점이며, 다른 이들과 소통하고 의견을 교환하는
+          것에 거부감이 없습니다. 항상 지속적인 발전을 추구하며, 다양한
+          분야에서의 도전을 즐기고 있습니다. 함께 일하며 더 나은 개발자로
+          성장하기 위해 열정을 가지고 노력하고 있습니다.
+        </p>
+      </div>
+      <div className="px-8 mt-12">
+        <h1 className="text-3xl font-semibold">My Skill</h1>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Front-end</h3>
+          <ul className="mt-2 text-xl flex flex-wrap">
+            {mySkillDataFront.map((v, i) => {
+              return <MySkillCard key={i} name={v.name} skill={v.skill} />;
+            })}
+          </ul>
         </div>
-        <div className="flex flex-col justify-center items-center mt-9 p-3">
-          <h3 className="font-bold text-2xl">About Me.</h3>
-          <ul className="list-disc ml-[36px] my-4">
-            <li>안녕하세요. 신입 개발자 정재원입니다.</li>
-            <li>
-              백엔드를 제일 오래 공부하긴 했지만 프론트엔드와
-              빅데이터,자동화시스템과 머신러닝 등 다양한 분야에 관심을 가지고
-              있습니다.
-            </li>
-            <li>
-              성실함과 집요함이 장점이고, 타인과의 의견 교류에 거부감이
-              없습니다.
-            </li>
-            <li>
-              항상 열정적으로 임하지는 못하지만 지속적으로 발전을 추구하는
-              편입니다.
-            </li>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Back-end</h3>
+          <ul className="mt-2 text-xl flex flex-wrap">
+            {mySkillDataBack.map((v, i) => {
+              return <MySkillCard key={i} name={v.name} skill={v.skill} />;
+            })}
           </ul>
         </div>
       </div>
-      <div className="mt-5 px-9">
-        <h2 className="text-[30px] mb-3">stack.</h2>
-        <h3 className="items-start">*Front-End</h3>
-        <ul className="list-disc ml-[36px]">
-          <li>ReactJS</li>
-          <li>nextJS</li>
-          <li>Redux</li>
-          <li>scss</li>
-          <li>Javascript</li>
-          <li>Typescript</li>
-        </ul>
-        <h3 className="items-start">*Back-End</h3>
-        <ul className="list-disc ml-[36px]">
-          <li>Spring Boot</li>
-          <li>Java</li>
-          <li>Jpa</li>
-        </ul>
-        <h3 className="items-start">*Database</h3>
-        <ul className="list-disc ml-[36px]">
-          <li>MySQL</li>
-          <li>Redis</li>
-        </ul>
-      </div>
 
-      <div className="mt-5 px-9">
-        <span>https://jjaewonn.tistory.com</span>
+      <div className="mt-12 px-8">
+        <h1 className="font-semibold text-2xl">My Blog</h1>
+        <Link
+          className="text-blue-600 hover:text-blue-800 underline"
+          href="https://jjaewonn.tistory.com"
+          target="_blank"
+        >
+          <span>https://jjaewonn.tistory.com</span>
+        </Link>
       </div>
     </div>
   );

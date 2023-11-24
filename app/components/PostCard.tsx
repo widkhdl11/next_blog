@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import { ko } from "date-fns/locale";
 
 interface PostCardProps {
   post: Post;
@@ -31,12 +32,12 @@ const PostCard: FC<PostCardProps> = ({ post, index }) => {
             objectFit="cover"
           />
         </div>
-        <div className="py-4 pr-16 md:pb-0 md:w-[544px]">
+        <div className="py-4 pr-16 md:pb-0 md:w-[544px] px-2">
           <h2 className="truncate mb-4 text-xl md:text-2xl font-semibold">
             {post.title}
           </h2>
           <time className="text-gray-500 md:text-base" dateTime={post.date}>
-            {format(parseISO(post.date), "LLLL d, yyyy")}
+            {format(parseISO(post.date), "yyyy년 MM월 dd일")}
           </time>
           <div className="truncate mt-4">{post.description}</div>
         </div>

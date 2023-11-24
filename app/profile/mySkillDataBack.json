@@ -1,0 +1,10 @@
+[
+  { "name": "Java", "skill": 2 },
+  { "name": "Python", "skill": 2 },
+  { "name": "Spring( boot)", "skill": 2 },
+  { "name": "JPA", "skill": 2 },
+  { "name": "NextJS", "skill": 2 },
+  { "name": "Exporess", "skill": 2 },
+  { "name": "MySQL", "skill": 2 },
+  { "name": "Redis", "skill": 2 }
+]

@@ -21,7 +21,7 @@ const Banner: FC = () => {
 
   return (
     <div
-      className={`md-container px-8 py-1 bg-gradient-to-r from-d-green to-d-purple flex items-center justify-between bg-red-100 ${
+      className={`md-container px-8 py-1 bg-gradient-to-r from-d-green to-d-purple flex items-center justify-between ${
         isClose && "hidden"
       }`}
     >
