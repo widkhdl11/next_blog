@@ -54,7 +54,7 @@ const Profile: NextPage = () => {
       </div>
       <div className="flex justify-center">
         <Image
-          src="/images/profile.jpg"
+          src="/images/profile02.jpg"
           alt="profile"
           width={140 * size > 140 ? 140 * size : 140}
           height={180 * size > 180 ? 180 * size : 180}
