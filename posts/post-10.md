@@ -30,13 +30,13 @@ description: HTTP/1.0과 HTTP/1.1
 
 - 쓸데 없는 연결과 연결 해제 기능을 실행하지 않아, 서버에 대한 부하를 줄이고 속도를 개선
   &nbsp;
-  ![Alt text](/images/keep-alive.png)
+  ![keep-alive](/images/keep-alive.png)
   &nbsp;&nbsp;
 
 2. 파이프라이닝
    &nbsp;
 
-- ![Alt text](/images/pileliningpng.png)
+- ![pileliningpng](/images/pileliningpng.png)
   &nbsp;
 
 - 한번에 요청하고 받은 요청을 한번에 처리 할 수 있다.
