@@ -39,13 +39,13 @@ const Header: FC = () => {
         </h1>
         <div>
           <Link
-            href={"./profile"}
+            href={"/profile"}
             className="hover:font-semibold underline hover:shadow-lg"
           >
             Profile
           </Link>
           <Link
-            href={"./projects"}
+            href={"/projects"}
             className="ml-4 hover:font-semibold underline hover:shadow-lg"
           >
             Projects

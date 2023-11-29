@@ -47,7 +47,7 @@ const PostLayout: NextPage<PostLayoutProps> = ({ params }) => {
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
   return (
-    <article className="min-h-screen">
+    <article className="min-h-screen pb-20">
       {post.thumbnail && (
         <div className="relative h-60 md:h-96">
           <Image
